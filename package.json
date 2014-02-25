@@ -1,6 +1,6 @@
 {
   "name": "x-format",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "dependencies": {
     "x-common": "~0.0",
@@ -13,7 +13,7 @@
     "x-component",
     "formatting numbers",
     "formatting date",
-	"moment"
+    "moment"
   ],
   "repository": {
     "type": "git",

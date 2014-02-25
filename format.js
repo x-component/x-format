@@ -3,11 +3,11 @@
  * x-format
  * ========
  *
- * This module contains 2 formatting functions for numbers and dates.
+ * This module contains formatting functions for numbers and dates.
  *
  * It offers a simple interface and a configurable default behavior.
  *
- * Using options one can override the default behavior and use 
+ * Using options you can override the default behavior and use 
  * p.e. all date formats as defined by [moment.js](http://momentjs.com)
  *
  * **usage**
@@ -60,8 +60,8 @@ module.exports = extend( M={} , {
 	 * Formats number, with decimal point, thousend separators, scale and v.unit as suffix
 	 *
 	 * @param value    a number or an object like { value: <number> , unit: 'MB' }
-	 * @param options  options merged with number.config
-	 *
+	 * @param options  optional options merged with format.number.config and format.config
+	 * @return         the formatted string
 	 */
 	number : extend(function F(v/*!value*/, config) {
 		var n = v.value ? v.value : v, str = '';
@@ -103,7 +103,7 @@ module.exports = extend( M={} , {
 		 *
 		 * contains the global default options:
 		 *
-		 * @param scale number of digits to show. Defualt 2
+		 * @param scale number of digits to show. Default 2
 		 * @param unit  show units in final string in case number is an object  with a unit property. Default: true
 		 */
 		config:{
@@ -118,15 +118,17 @@ module.exports = extend( M={} , {
 	 * -------------------------------
 	 *
 	 * Formats a date according to the locale settings,
-	 * Default format is moment.js:L'.
+	 * Default format is 'L' as defined by [moment.js](http://momentjs.com)
 	 *
 	 * **Example**:
 	 *
 	 *    var str = require('x-format').date('2012-05-03', {locale:'de'}); // '03.05.2012'
 	 *
-	 * @param format as defined by moment.js. Default 'L'.
+	 * @param date     the date as a string or long a returned by `Date.now()`
+	 * @param options  optional options. Example {format:'LLL', locale: 'en' }. Default format is 'L'
+	 * @return         the formatted string
 	 */
-	date: extend (function F(d, config) {
+	date: extend ( function F(d, config) {
 		var str = '';
 		try {
 			config = extend({}, M.config, F.config, config);

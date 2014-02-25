@@ -7,13 +7,18 @@
     "x-log": "~0.0",
     "moment": "~2.5"
   },
-  "description": "simple formatting functions for date and numbers with units. Uses moment.js",
+  "description": "simple formatting functions for date and numbers with units. Uses moment.js for date formatting",
   "keywords": [
     "x-x",
     "x-component",
     "formatting numbers",
-    "formatting date"
+    "formatting date",
+	"moment"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/x-component/x-format.git"
+  },
   "devDependencies": {
     "vows": "~0.7",
     "dox-basic": "~0.0"

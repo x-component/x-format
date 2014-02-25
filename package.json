@@ -1,0 +1,27 @@
+{
+	"name"    : "x-format",
+	"version" : "0.0.0",
+	"license" : "MIT",
+	"dependencies":{
+		"x-common" : "~0.0",
+		"x-log"    : "~0.0",
+		"moment"   : "~2.5"
+	},
+	"description": "simple formatting functions for date and numbers with units. Uses moment.js",
+	"keywords": [
+		"x-x",
+		"x-component",
+		"formatting numbers",
+		"formatting date"
+	],
+	
+	"devDependencies":{
+		"vows"      : "~0.7",
+		"dox-basic" : "~0.0"
+	},
+	"main" : "format.js",
+	"scripts": {
+		"prepublish": "cat ./format.js | node ./node_modules/dox-basic/bin/dox-basic -m -t \"[![Build Status](https://travis-ci.org/x-component/$npm_package_name.png?v$npm_package_version)](https://travis-ci.org/x-component/$npm_package_name)\" > README.md",
+		"test"       : "vows ./test/*.test.js"
+	}
+}
